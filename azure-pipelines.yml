@@ -1,0 +1,11 @@
+trigger:
+  -master
+pool
+  name:Default
+steps:
+  -script: echo Myfirst Azure Pipleline for maven project
+  displayName: 'Run a one-line script'
+  -script: mvn clean install
+  displayName: 'Bulid with maven'
+  -script: java -jar target/MyMavenApp-1.0-SNAPSHOT.jar 
+  displayName: 'Running jar'
